@@ -73,23 +73,32 @@ for (let index = 0; index < colors.length; index += 1) {
   }
 }
 
-
-// exercício 7:
+// Exercício 7:
 
 divPalette.addEventListener('click', (event) => {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   event.target.classList.add('selected');
-},
-);
+});
 
+// Exercício 8:
 
-
-
-
+pixelsTable.addEventListener('click', (event) => {
+  const colorSelected = document.querySelector('.selected');
+  event.target.style.backgroundColor = colorSelected;
+  console.log(event.target);
+});
 
 // Exercício 9:
 
-/* const button = document.createElement('button');
+const button = document.createElement('button');
 button.type = 'button';
-button.innerHTML = 'Limpar quadro'; */
+button.innerHTML = 'Limpar quadro';
+divButton.appendChild(button);
+
+button.addEventListener('click', () => {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
