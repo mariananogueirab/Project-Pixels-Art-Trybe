@@ -15,9 +15,9 @@ const divPalette = document.createElement('div');
 divPalette.id = 'color-palette';
 main.appendChild(divPalette);
 
-//Divs menores com as cores:
+// Divs menores com as cores:
 function createDivColors(cor) {
-  let divColors = document.createElement('div');
+  const divColors = document.createElement('div');
   divColors.className = 'color';
   divColors.style.backgroundColor = cor;
   divPalette.appendChild(divColors);
