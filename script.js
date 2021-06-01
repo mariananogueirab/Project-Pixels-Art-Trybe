@@ -1,10 +1,10 @@
-let header = document.querySelector('.cabecalho');
-let main = document.querySelector('.principal');
-let footer = document.querySelector('.rodape');
+const header = document.querySelector('.cabecalho');
+const main = document.querySelector('.principal');
+const footer = document.querySelector('.rodape');
 
 // Requisito 1:
 
-let title = document.createElement('h1');
-title.className = 'title';
+const title = document.createElement('h1');
+title.id = 'title';
 title.innerText = 'Paleta de Cores';
 header.appendChild(title);
