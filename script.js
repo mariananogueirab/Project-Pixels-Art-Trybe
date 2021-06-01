@@ -93,11 +93,12 @@ pixelsTable.addEventListener('click', (event) => {
 
 const button = document.createElement('button');
 button.type = 'button';
-button.innerHTML = 'Limpar quadro';
+button.innerHTML = 'Limpar';
+button.id = 'clear-board';
 divButton.appendChild(button);
 
 button.addEventListener('click', () => {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
