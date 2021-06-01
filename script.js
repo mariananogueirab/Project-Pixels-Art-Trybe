@@ -31,6 +31,11 @@ createDivColors('#FF9C1E');
 // createDivColors('#FEF636');
 // createDivColors('#ADFF91');
 
+// Para exercício 9:
+const divButton = document.createElement('div');
+divButton.className = 'btn';
+main.appendChild(divButton);
+
 // Requisito 4:
 
 const divTable = document.createElement('div');
@@ -67,3 +72,24 @@ for (let index = 0; index < colors.length; index += 1) {
     colors[index].classList.add('selected');
   }
 }
+
+
+// exercício 7:
+
+divPalette.addEventListener('click', (event) => {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  event.target.classList.add('selected');
+},
+);
+
+
+
+
+
+
+// Exercício 9:
+
+/* const button = document.createElement('button');
+button.type = 'button';
+button.innerHTML = 'Limpar quadro'; */
