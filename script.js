@@ -25,8 +25,8 @@ function createDivColors(cor) {
 
 createDivColors('black');
 createDivColors('#B6537B');
-createDivColors('#FF2652');
+// createDivColors('#FF2652');
 createDivColors('#FF0EAA');
 createDivColors('#FF9C1E');
-createDivColors('#FEF636');
-createDivColors('#ADFF91');
+// createDivColors('#FEF636');
+// createDivColors('#ADFF91');
