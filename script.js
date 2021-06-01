@@ -9,7 +9,7 @@ title.id = 'title';
 title.innerText = 'Paleta de Cores';
 header.appendChild(title);
 
-// Requisito 2:
+// Requisito 2 e 3:
 // Div de fora:
 const divPalette = document.createElement('div');
 divPalette.id = 'color-palette';
@@ -30,3 +30,31 @@ createDivColors('#FF0EAA');
 createDivColors('#FF9C1E');
 // createDivColors('#FEF636');
 // createDivColors('#ADFF91');
+
+// Requisito 4:
+
+const divTable = document.createElement('div');
+divTable.className = 'div-table';
+main.appendChild(divTable);
+
+const pixelsTable = document.createElement('table');
+pixelsTable.id = 'pixel-board';
+divTable.appendChild(pixelsTable);
+
+function createLinePixels(numberOfColumns) {
+  const lineTable = document.createElement('tr');
+  lineTable.className = 'line-table';
+  pixelsTable.appendChild(lineTable);
+  for (let index = 1; index <= numberOfColumns; index += 1) {
+    const pixel = document.createElement('td');
+    pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'white';
+    lineTable.appendChild(pixel);
+  }
+}
+
+createLinePixels(5);
+createLinePixels(5);
+createLinePixels(5);
+createLinePixels(5);
+createLinePixels(5);

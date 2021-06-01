@@ -9,3 +9,21 @@
   display: inline-block;
   border: 1px solid black;
 }
+
+.pixel {
+    border: 1px solid black;
+    height: 100px;
+    display: inline-block;
+    width: 100px;
+    margin: 0;
+}
+
+#pixel-board {
+    width: 80%;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.line-table {
+    margin: 0;
+}
