@@ -85,21 +85,42 @@ divPalette.addEventListener('click', (event) => {
 
 pixelsTable.addEventListener('click', (event) => {
   const colorSelected = document.querySelector('.selected');
-  event.target.style.backgroundColor = colorSelected;
+  event.target.style.backgroundColor = colorSelected.style.backgroundColor;
   console.log(event.target);
 });
 
 // Exercício 9:
 
-const button = document.createElement('button');
-button.type = 'button';
-button.innerHTML = 'Limpar';
-button.id = 'clear-board';
-divButton.appendChild(button);
+const divButtonClean = document.createElement('div');
+divButtonClean.className = 'divClean';
+divButton.appendChild(divButtonClean);
 
-button.addEventListener('click', () => {
+const buttonClean = document.createElement('button');
+buttonClean.type = 'button';
+buttonClean.innerHTML = 'Limpar';
+buttonClean.id = 'clear-board';
+divButtonClean.appendChild(buttonClean);
+
+buttonClean.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 });
+
+// Exercício 10:
+
+const divButtonSize = document.createElement('div');
+divButtonSize.className = 'divSize';
+divButton.appendChild(divButtonSize);
+
+const inputSize = document.createElement('input');
+inputSize.type = 'text';
+inputSize.id = 'board-size';
+divButtonSize.appendChild(inputSize);
+
+const buttonSize = document.createElement('button');
+buttonSize.type = 'button';
+buttonSize.innerText = 'VQV';
+buttonSize.id = 'generate-board';
+divButtonSize.appendChild(buttonSize);

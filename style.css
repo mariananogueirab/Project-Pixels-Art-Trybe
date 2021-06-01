@@ -41,3 +41,7 @@
   display: block;
 }
 
+.divSize, .divClean  {
+    display: inline-block;
+    margin: 15px;
+}
