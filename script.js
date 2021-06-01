@@ -58,3 +58,12 @@ createLinePixels(5);
 createLinePixels(5);
 createLinePixels(5);
 createLinePixels(5);
+
+// Exercício 6:
+
+const colors = document.getElementsByClassName('color');
+for (let index = 0; index < colors.length; index += 1) {
+  if (colors[index].style.backgroundColor === 'black') {
+    colors[index].classList.add('selected');
+  }
+}
