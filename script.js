@@ -101,8 +101,9 @@ buttonClean.innerHTML = 'Limpar';
 buttonClean.id = 'clear-board';
 divButtonClean.appendChild(buttonClean);
 
+const pixels = document.querySelectorAll('.pixel');
+
 buttonClean.addEventListener('click', () => {
-  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
@@ -124,3 +125,11 @@ buttonSize.type = 'button';
 buttonSize.innerText = 'VQV';
 buttonSize.id = 'generate-board';
 divButtonSize.appendChild(buttonSize);
+
+buttonSize.addEventListener('click', () => {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.width = `${inputSize.value}px`;
+    pixels[index].style.height = `${inputSize.value}px`;
+  }
+},
+);
