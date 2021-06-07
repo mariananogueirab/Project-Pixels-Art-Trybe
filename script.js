@@ -114,7 +114,7 @@ divButtonSize.className = 'divSize';
 divButton.appendChild(divButtonSize);
 
 const inputSize = document.createElement('input');
-inputSize.type = 'text';
+inputSize.type = 'number';
 inputSize.id = 'board-size';
 inputSize.min = '0';
 divButtonSize.appendChild(inputSize);
@@ -132,21 +132,21 @@ function minSize (size) {
 // eslint-disable-next-line max-lines-per-function
 buttonSize.addEventListener('click', () => {
   if (inputSize.value != '') {
-  for (let index = 0; index < pixels.length; index += 1) {
-    if (inputSize.value < 5) {
-      pixels[index].style.width = '5px';
-      pixels[index].style.height = '5px';
-      pixels[index].style.backgroundColor = 'white';
-    } else if (inputSize.value > 50) {
-      pixels[index].style.width = '50px';
-      pixels[index].style.height = '50px';
-      pixels[index].style.backgroundColor = 'white';
-    } else {
-      pixels[index].style.width = `${inputSize.value}px`;
-      pixels[index].style.height = `${inputSize.value}px`;
-      pixels[index].style.backgroundColor = 'white';
+    for (let index = 0; index < pixels.length; index += 1) {
+      if (inputSize.value < 5) {
+        pixels[index].style.width = '5px';
+        pixels[index].style.height = '5px';
+        pixels[index].style.backgroundColor = 'white';
+      } else if (inputSize.value > 50) {
+        pixels[index].style.width = '50px';
+        pixels[index].style.height = '50px';
+        pixels[index].style.backgroundColor = 'white';
+      } else {
+        pixels[index].style.width = `${inputSize.value}px`;
+        pixels[index].style.height = `${inputSize.value}px`;
+        pixels[index].style.backgroundColor = 'white';
+      }
     }
-  }
   } else {
     alert('Board inválido!');
   }
