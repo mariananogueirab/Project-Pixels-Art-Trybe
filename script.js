@@ -49,6 +49,8 @@ function createLinePixels(numberOfColumns) {
     const pixel = document.createElement('td');
     pixel.className = 'pixel';
     pixel.style.backgroundColor = 'white';
+    pixel.style.width = '40px';
+    pixel.style.height = '40px';
     lineTable.appendChild(pixel);
   }
 }
