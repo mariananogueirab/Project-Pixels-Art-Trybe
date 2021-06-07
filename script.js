@@ -101,9 +101,8 @@ buttonClean.innerHTML = 'Limpar';
 buttonClean.id = 'clear-board';
 divButtonClean.appendChild(buttonClean);
 
-const pixels = document.querySelectorAll('.pixel');
-
 buttonClean.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
@@ -143,6 +142,7 @@ divButtonSize.appendChild(buttonSize);
 } */
 
 buttonSize.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
   if (inputSize.value !== '') {
     for (let index = 0; index < pixels.length; index += 1) {
       if (inputSize.value < 5) {
@@ -165,8 +165,8 @@ buttonSize.addEventListener('click', () => {
 // Exercício 12:
 
 function randomColors() {
-  let color1 = Math.ceil(Math.random() * 255);
-  let color2 = Math.ceil(Math.random() * 255);
-  let color3 = Math.ceil(Math.random() * 255);
+  const color1 = Math.ceil(Math.random() * 255);
+  const color2 = Math.ceil(Math.random() * 255);
+  const color3 = Math.ceil(Math.random() * 255);
   return `rgb(${color1}, ${color2}, ${color3})`;
 }
