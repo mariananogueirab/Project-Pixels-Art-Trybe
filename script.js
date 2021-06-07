@@ -117,6 +117,7 @@ const inputSize = document.createElement('input');
 inputSize.type = 'number';
 inputSize.id = 'board-size';
 inputSize.min = '0';
+inputSize.max = '50';
 divButtonSize.appendChild(inputSize);
 
 const buttonSize = document.createElement('button');
@@ -125,27 +126,21 @@ buttonSize.innerText = 'VQV';
 buttonSize.id = 'generate-board';
 divButtonSize.appendChild(buttonSize);
 
-function minSize (size) {
-  
-}
-
 // eslint-disable-next-line max-lines-per-function
 buttonSize.addEventListener('click', () => {
-  if (inputSize.value != '') {
+  if (inputSize.value !== '') {
     for (let index = 0; index < pixels.length; index += 1) {
       if (inputSize.value < 5) {
         pixels[index].style.width = '5px';
         pixels[index].style.height = '5px';
-        pixels[index].style.backgroundColor = 'white';
       } else if (inputSize.value > 50) {
         pixels[index].style.width = '50px';
         pixels[index].style.height = '50px';
-        pixels[index].style.backgroundColor = 'white';
       } else {
         pixels[index].style.width = `${inputSize.value}px`;
         pixels[index].style.height = `${inputSize.value}px`;
-        pixels[index].style.backgroundColor = 'white';
       }
+      pixels[index].style.backgroundColor = 'white';
     }
   } else {
     alert('Board inválido!');

@@ -41,7 +41,7 @@
   display: block;
 }
 
-.divSize, .divClean  {
+.divSize, .divClean {
   display: inline-block;
   margin: 15px;
 }
