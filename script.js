@@ -107,7 +107,7 @@ buttonClean.addEventListener('click', () => {
   }
 });
 
-// Exercício 10:
+// Exercício 10 e 11:
 
 const divButtonSize = document.createElement('div');
 divButtonSize.className = 'divSize';
@@ -116,7 +116,7 @@ divButton.appendChild(divButtonSize);
 const inputSize = document.createElement('input');
 inputSize.type = 'number';
 inputSize.id = 'board-size';
-inputSize.min = '0';
+inputSize.min = '1';
 inputSize.max = '50';
 divButtonSize.appendChild(inputSize);
 
@@ -126,27 +126,29 @@ buttonSize.innerText = 'VQV';
 buttonSize.id = 'generate-board';
 divButtonSize.appendChild(buttonSize);
 
-function minSize (min) {
+/* function minSize (min) {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.width = `${min}px`;
     pixels[index].style.height = `${min}px`;
   }
-}
+} */
 
-function maxSize (max) {
+/* function maxSize (max) {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.width = `${max}px`;
     pixels[index].style.height = `${max}px`;
   }
-}
+} */
 
 buttonSize.addEventListener('click', () => {
   if (inputSize.value !== '') {
     for (let index = 0; index < pixels.length; index += 1) {
       if (inputSize.value < 5) {
-        minSize(5);
+        pixels[index].style.width = '5px';
+        pixels[index].style.height = '5px';
       } else if (inputSize.value > 50) {
-        maxSize(50);
+        pixels[index].style.width = '50px';
+        pixels[index].style.height = '50px';
       } else {
         pixels[index].style.width = `${inputSize.value}px`;
         pixels[index].style.height = `${inputSize.value}px`;
