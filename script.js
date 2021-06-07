@@ -31,11 +31,6 @@ createDivColors('#FF9C1E');
 // createDivColors('#FEF636');
 // createDivColors('#ADFF91');
 
-// Para exercício 9:
-const divButton = document.createElement('div');
-divButton.className = 'btn';
-main.appendChild(divButton);
-
 // Requisito 4:
 
 const divTable = document.createElement('div');
@@ -86,10 +81,13 @@ divPalette.addEventListener('click', (event) => {
 pixelsTable.addEventListener('click', (event) => {
   const colorSelected = document.querySelector('.selected');
   event.target.style.backgroundColor = colorSelected.style.backgroundColor;
-  console.log(event.target);
 });
 
 // Exercício 9:
+
+const divButton = document.createElement('div');
+divButton.className = 'btn';
+main.insertBefore(divButton, divTable);
 
 const divButtonClean = document.createElement('div');
 divButtonClean.className = 'divClean';
@@ -118,6 +116,7 @@ divButton.appendChild(divButtonSize);
 const inputSize = document.createElement('input');
 inputSize.type = 'text';
 inputSize.id = 'board-size';
+inputSize.min = '0';
 divButtonSize.appendChild(inputSize);
 
 const buttonSize = document.createElement('button');
@@ -127,9 +126,12 @@ buttonSize.id = 'generate-board';
 divButtonSize.appendChild(buttonSize);
 
 buttonSize.addEventListener('click', () => {
+  if (inputSize.value != '') {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.width = `${inputSize.value}px`;
     pixels[index].style.height = `${inputSize.value}px`;
   }
-},
-);
+  } else {
+    alert('Board inválido!');
+  }
+});
