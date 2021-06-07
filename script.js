@@ -24,10 +24,10 @@ function createDivColors(cor) {
 }
 
 createDivColors('black');
-createDivColors('#B6537B');
+createDivColors(randomColors());
 // createDivColors('#FF2652');
-createDivColors('#FF0EAA');
-createDivColors('#FF9C1E');
+createDivColors(randomColors());
+createDivColors(randomColors());
 // createDivColors('#FEF636');
 // createDivColors('#ADFF91');
 
@@ -146,3 +146,13 @@ buttonSize.addEventListener('click', () => {
     alert('Board inválido!');
   }
 });
+
+// Exercício 12:
+
+function randomColors() {
+  let color1 = Math.ceil(Math.random() * 255);
+  let color2 = Math.ceil(Math.random() * 255);
+  let color3 = Math.ceil(Math.random() * 255);
+  return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+}
+console.log (randomColors());
