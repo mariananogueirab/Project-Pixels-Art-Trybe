@@ -116,7 +116,7 @@ divButton.appendChild(divButtonSize);
 const inputSize = document.createElement('input');
 inputSize.type = 'text';
 inputSize.id = 'board-size';
-inputSize.min = '0';
+inputSize.min = '0px';
 divButtonSize.appendChild(inputSize);
 
 const buttonSize = document.createElement('button');
@@ -128,8 +128,9 @@ divButtonSize.appendChild(buttonSize);
 buttonSize.addEventListener('click', () => {
   if (inputSize.value != '') {
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.width = `${inputSize.value}px`;
-    pixels[index].style.height = `${inputSize.value}px`;
+    pixels[index].style.width = inputSize.value;
+    pixels[index].style.height = inputSize.value;
+    pixels[index].style.backgroundColor = 'white';
   }
   } else {
     alert('Board inválido!');
