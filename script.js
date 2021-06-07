@@ -126,16 +126,27 @@ buttonSize.innerText = 'VQV';
 buttonSize.id = 'generate-board';
 divButtonSize.appendChild(buttonSize);
 
-// eslint-disable-next-line max-lines-per-function
+function minSize (min) {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.width = `${min}px`;
+    pixels[index].style.height = `${min}px`;
+  }
+}
+
+function maxSize (max) {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.width = `${max}px`;
+    pixels[index].style.height = `${max}px`;
+  }
+}
+
 buttonSize.addEventListener('click', () => {
   if (inputSize.value !== '') {
     for (let index = 0; index < pixels.length; index += 1) {
       if (inputSize.value < 5) {
-        pixels[index].style.width = '5px';
-        pixels[index].style.height = '5px';
+        minSize(5);
       } else if (inputSize.value > 50) {
-        pixels[index].style.width = '50px';
-        pixels[index].style.height = '50px';
+        maxSize(50);
       } else {
         pixels[index].style.width = `${inputSize.value}px`;
         pixels[index].style.height = `${inputSize.value}px`;
@@ -153,6 +164,5 @@ function randomColors() {
   let color1 = Math.ceil(Math.random() * 255);
   let color2 = Math.ceil(Math.random() * 255);
   let color3 = Math.ceil(Math.random() * 255);
-  return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+  return `rgb(${color1}, ${color2}, ${color3})`;
 }
-console.log (randomColors());
